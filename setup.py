@@ -5,7 +5,7 @@ with open('README.md', 'r') as file:
 
 setuptools.setup(
     name = 'preprocess_dsenthusiast',
-    version = '0.0.1',
+    version = '0.0.2',
     author = 'Biju Sasidharan',
     author_email = 'biju.sasidharan@gmail.com',
     description = 'This is a text feature engineering and preprocessing package',
