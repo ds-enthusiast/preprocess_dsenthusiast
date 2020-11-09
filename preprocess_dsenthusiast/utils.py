@@ -173,7 +173,12 @@ def _cont_exp(x):
     "innit": "is it not",
     "dis": "this",
     "bak": "back",
-    "brng": "bring"
+    "brng": "bring",
+    "thx": "thanks",
+    "fb": "face book",
+    "eu": "europe",
+    "ny": "new york",
+    "nj": "new jersey"
     }
 
     if type(x) is str:
@@ -223,7 +228,7 @@ def _remove_stopwords(x):
     return ' '.join([t for t in x.split() if t not in stopwords])
 
 def _remove_digits(x):
-    return ' '.join([t for t in x.split() if not t.isdigit()])
+    return re.sub(r'[0-9,.]+', '', x).strip()
 
 def _make_base(x):
     x = str(x)
