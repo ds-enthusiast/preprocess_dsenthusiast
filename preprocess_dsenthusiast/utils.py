@@ -223,7 +223,7 @@ def _remove_stopwords(x):
     return ' '.join([t for t in x.split() if t not in stopwords])
 
 def _remove_digits(x):
-    return ' '.join([t for t in x.split() if t not in t.isdigit()])
+    return ' '.join([t for t in x.split() if not t.isdigit()])
 
 def _make_base(x):
     x = str(x)
