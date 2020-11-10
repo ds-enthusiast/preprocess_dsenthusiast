@@ -260,7 +260,8 @@ def _remove_rare_words(x, freq, n=20):
     return x
 
 def _spelling_correction(x):
-    x = ''.join(TextBlob(x).correct())
+    # x = ''.join(TextBlob(x).correct())
+    x = TextBlob(x).correct()
     return x
 
 def _remove_dups_char(x):
