@@ -1,6 +1,6 @@
 from preprocess_dsenthusiast import utils
 
-__version__ = '0.0.7'
+__version__ = '0.0.8'
 
 def get_wordcounts(x):
     return utils._get_wordcounts(x)
@@ -79,3 +79,6 @@ def remove_dups_char(x):
 
 def get_basic_features(df):
 	return utils._get_basic_features(df)
+
+def get_ngram(df, col, ngram_range):
+	return utils._get_ngram(df, col, ngram_range)

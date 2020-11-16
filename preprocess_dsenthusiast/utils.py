@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 import unicodedata
 from textblob import TextBlob
 
+from sklearn.feature_extraction.text import CountVectorizer
+
 nlp = spacy.load('en_core_web_sm')
 
 def _get_wordcounts(x):
@@ -282,3 +284,11 @@ def _get_basic_features(df):
 		print('ERROR: This function takes only Pandas DataFrame')
 		
 	return df
+
+def _get_ngram(df, col, ngram_range):
+	vectorizer = CountVectorizer(ngram_range=(ngram_range, ngram_range))
+	vectorizer.fit_transform(df[col])
+	ngram = vectorizer.vocabulary_
+	ngram = sorted(ngram.items(), key = lambda x: x[1], reverse=True)
+
+	return ngram
